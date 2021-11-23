@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { User } from '../../shared/User.model';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent  {
+  @Input() user!:User;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getActiveText() {
+    if(this.user.active) {
+      return 'active'
+    }
+    return 'inactive'
   }
-
 }

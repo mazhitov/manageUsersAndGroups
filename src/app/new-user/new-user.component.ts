@@ -24,6 +24,7 @@ export class NewUserComponent {
     const role = this.roleValue.nativeElement.value;
     const newUser = new User(name, email, active, role);
     this.usersService.addUser(newUser);
+    console.log(this.usersService.getUsers());
   }
 
   reset() {
