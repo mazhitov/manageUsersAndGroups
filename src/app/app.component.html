@@ -1,12 +1,18 @@
+<div class="card-header text-center">
+  <button class="btn btn-success mr-2" (click)="manage=true; usersAndGroups = false">Manage</button>
+  <button class="btn btn-success" (click)="manage=false; usersAndGroups = true">Users And Groups</button>
+</div>
 <div class="container-sm row p-4">
-  <div class="col-4">
+  <div class="col-4" *ngIf="manage">
     <app-new-user></app-new-user>
     <app-new-group></app-new-group>
   </div>
-  <div class="col-4">
-    <app-users></app-users>
-  </div>
-  <div class="col-4">
-    <app-groups></app-groups>
-  </div>
+  <ng-container *ngIf="usersAndGroups">
+    <div class="col-4">
+      <app-users></app-users>
+    </div>
+    <div class="col-4">
+      <app-groups></app-groups>
+    </div>
+  </ng-container>
 </div>
