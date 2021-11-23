@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { UsersService } from '../shared/Users.service';
 import { User } from '../shared/User.model';
 
@@ -8,31 +8,29 @@ import { User } from '../shared/User.model';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent {
-  @ViewChild('userNameInput') userName!: ElementRef;
-  @ViewChild('emailInput') emailAddress!: ElementRef;
-  @ViewChild('activeCheckInput') activeCheck!: ElementRef;
-  @ViewChild('selectedRole') roleValue!: ElementRef;
-
+  name = '';
+  email = '';
+  active = false;
+  role = 'Choose role';
   roleArray = ['user', 'editor', 'admin'];
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService) {}
 
   onAddUser() {
-    const name = this.userName.nativeElement.value;
-    const email = this.emailAddress.nativeElement.value;
-    const active = this.activeCheck.nativeElement.checked;
-    const role = this.roleValue.nativeElement.value;
-    const newUser = new User(name, email, active, role);
+    const newUser = new User(this.name, this.email, this.active, this.role);
     this.usersService.addUser(newUser);
     this.reset();
   }
 
   reset() {
-    this.userName.nativeElement.value = '';
-    this.emailAddress.nativeElement.value = '';
-    this.activeCheck.nativeElement.checked = false;
-    this.roleValue.nativeElement.value = 'Choose role';
+    this.name = '';
+    this.active = false;
+    this.email = '';
+    this.role = 'Choose role';
   }
 
 
+  getDisabled() {
+    return this.name === '' || this.email === '' || this.role === 'Choose role';
+  }
 }

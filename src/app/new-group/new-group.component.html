@@ -8,9 +8,10 @@
              id="username"
              placeholder="Name"
              name="groupName"
-             #groupNameInput>
+             [(ngModel)]="groupName"
+      >
     </div>
-    <button type="submit" class="btn btn-primary"
+    <button type="submit" class="btn btn-primary" [disabled]="groupName === ''"
     >Create</button>
   </fieldset>
 </form>

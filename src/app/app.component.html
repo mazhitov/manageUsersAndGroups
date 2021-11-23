@@ -2,17 +2,22 @@
   <button class="btn btn-success mr-2" (click)="manage=true; usersAndGroups = false">Manage</button>
   <button class="btn btn-success" (click)="manage=false; usersAndGroups = true">Users And Groups</button>
 </div>
-<div class="container-sm row p-4">
-  <div class="col-4" *ngIf="manage">
-    <app-new-user></app-new-user>
-    <app-new-group></app-new-group>
+<div class="container-sm p-4">
+  <div class="row ml-auto mr-auto" *ngIf="manage">
+    <div class="col-6">
+      <app-new-user></app-new-user>
+    </div>
+    <div class="col-6">
+      <app-new-group></app-new-group>
+    </div>
+
   </div>
-  <ng-container *ngIf="usersAndGroups">
-    <div class="col-4">
+  <div *ngIf="usersAndGroups" class="row ml-auto mr-auto">
+    <div class="col-6">
       <app-users></app-users>
     </div>
-    <div class="col-4">
+    <div class="col-6">
       <app-groups></app-groups>
     </div>
-  </ng-container>
+  </div>
 </div>

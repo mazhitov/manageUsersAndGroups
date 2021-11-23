@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { GroupsService } from '../shared/Groups.service';
 import { Group } from '../shared/Group.model';
 
@@ -8,17 +8,17 @@ import { Group } from '../shared/Group.model';
   styleUrls: ['./new-group.component.css']
 })
 export class NewGroupComponent {
-  @ViewChild('groupNameInput') groupName!:ElementRef;
+  groupName = '';
+
   constructor(private groupsService: GroupsService) {}
 
   onAddGroup() {
-    const groupName = this.groupName.nativeElement.value;
-    const newGroup = new Group(groupName, []);
+    const newGroup = new Group(this.groupName, []);
     this.groupsService.addGroup(newGroup);
     this.reset();
   }
 
   reset() {
-    this.groupName.nativeElement.value = '';
+    this.groupName = '';
   }
 }
