@@ -1,4 +1,9 @@
-<app-user
-  *ngFor="let user of users"
-  [user]="user"
-></app-user>
+<form>
+  <fieldset class="border border-dark p-3">
+    <legend class="text-center">Users</legend>
+    <app-user
+      *ngFor="let user of users"
+      [user]="user"
+    ></app-user>
+  </fieldset>
+</form>

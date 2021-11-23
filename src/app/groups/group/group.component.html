@@ -1,1 +1,6 @@
-<p>group works!</p>
+<div class="card p-2 mb-2" style="cursor: pointer">
+  <p class="text-capitalize">{{group.name}}</p>
+  <ul>
+    <li *ngFor="let user of group.users">{{ user }}</li>
+  </ul>
+</div>

@@ -1,6 +1,6 @@
 <form>
   <fieldset class="border border-dark p-3">
     <legend class="text-center">Groups</legend>
-    <app-group></app-group>
+    <app-group *ngFor="let group of groups" [group]="group"></app-group>
   </fieldset>
 </form>
