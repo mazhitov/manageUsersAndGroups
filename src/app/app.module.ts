@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
+import { UsersService } from './shared/Users.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import { UserComponent } from './users/user/user.component';
     UserComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

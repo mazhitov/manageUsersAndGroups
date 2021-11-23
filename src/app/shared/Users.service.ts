@@ -8,4 +8,11 @@ export class UsersService {
   getUsers() {
     return this.users.slice();
   }
+
+  addUser(user: User) {
+    const existingUser = this.users.find(user => user === user);
+    if(!existingUser) {
+      this.users.push(user);
+    }
+  }
 }
