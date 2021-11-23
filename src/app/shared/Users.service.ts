@@ -4,7 +4,10 @@ import { EventEmitter } from '@angular/core';
 export class UsersService {
   usersChange = new EventEmitter<User[]>();
   private users: User[] = [
-    new User('admin', 'admin@mail.ru', false,'admin'),
+    new User('admin', 'admin@mail.ru', true,'admin'),
+    new User('vasya', 'vasya@mail.ru', false,'user'),
+    new User('lena', 'lena@mail.ru', false,'editor'),
+    new User('john', 'john@mail.ru', true,'user'),
   ];
 
   getUsers() {

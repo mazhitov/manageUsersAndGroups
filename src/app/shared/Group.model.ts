@@ -6,4 +6,11 @@ export class Group {
     public users:User[],
     public active = false
   ) {}
+
+  addUser(user: User) {
+    const existingUser = this.users.includes(user);
+    if(!existingUser) {
+      this.users.push(user);
+    }
+  }
 }

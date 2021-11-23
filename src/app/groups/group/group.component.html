@@ -1,6 +1,6 @@
 <div [ngClass]="getClassName()" style="cursor: pointer" (click)="onClickGroup()">
   <p class="text-capitalize">{{group.name}}</p>
   <ul>
-    <li *ngFor="let user of group.users">{{ user }}</li>
+    <li *ngFor="let user of group.users" class="text-capitalize">{{ user.name }}</li>
   </ul>
 </div>

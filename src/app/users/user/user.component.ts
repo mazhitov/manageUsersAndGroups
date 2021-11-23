@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { User } from '../../shared/User.model';
+import { GroupsService } from '../../shared/Groups.service';
 
 @Component({
   selector: 'app-user',
@@ -9,10 +10,24 @@ import { User } from '../../shared/User.model';
 export class UserComponent  {
   @Input() user!:User;
 
+  constructor(private groupService: GroupsService) {}
+
   getActiveText() {
     if(this.user.active) {
-      return 'active'
+      return 'Active'
     }
-    return 'inactive'
+    return 'Inactive'
+  }
+
+  onAddUserToGroup() {
+    this.groupService.currentGroup.addUser(this.user);
+  }
+
+  getClassName() {
+    return {
+      'card': true,
+      'mb-1': true,
+      'group': this.groupService.currentGroup.users.includes(this.user),
+    }
   }
 }
