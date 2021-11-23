@@ -7,13 +7,15 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { UsersService } from './shared/Users.service';
 import { FormsModule } from '@angular/forms';
+import { NewGroupComponent } from './new-group/new-group.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewUserComponent,
     UsersComponent,
-    UserComponent
+    UserComponent,
+    NewGroupComponent
   ],
   imports: [
     BrowserModule,
