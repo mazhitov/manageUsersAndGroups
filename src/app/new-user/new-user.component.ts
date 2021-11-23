@@ -32,4 +32,6 @@ export class NewUserComponent {
     this.activeCheck.nativeElement.checked = false;
     this.roleValue.nativeElement.value = 'Choose role';
   }
+
+
 }

@@ -3,6 +3,8 @@ import { Group } from './Group.model';
 
 export class GroupsService {
   groupsChange = new EventEmitter<Group[]>();
+  currentGroup:Group = new Group('', []);
+
   private groups: Group[] = [
     new Group('Hiking group', []),
     new Group('Book club', []),

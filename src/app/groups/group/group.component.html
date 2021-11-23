@@ -1,4 +1,4 @@
-<div class="card p-2 mb-2" style="cursor: pointer">
+<div [ngClass]="getClassName()" style="cursor: pointer" (click)="onClickGroup()">
   <p class="text-capitalize">{{group.name}}</p>
   <ul>
     <li *ngFor="let user of group.users">{{ user }}</li>
