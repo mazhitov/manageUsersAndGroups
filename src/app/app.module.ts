@@ -8,6 +8,7 @@ import { UserComponent } from './users/user/user.component';
 import { UsersService } from './shared/Users.service';
 import { FormsModule } from '@angular/forms';
 import { NewGroupComponent } from './new-group/new-group.component';
+import { GroupsService } from './shared/Groups.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { NewGroupComponent } from './new-group/new-group.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [UsersService],
+  providers: [UsersService, GroupsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
