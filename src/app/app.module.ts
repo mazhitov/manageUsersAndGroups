@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NewGroupComponent } from './new-group/new-group.component';
 import { GroupsService } from './shared/Groups.service';
 import { GroupsComponent } from './groups/groups.component';
+import { GroupComponent } from './groups/group/group.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GroupsComponent } from './groups/groups.component';
     UsersComponent,
     UserComponent,
     NewGroupComponent,
-    GroupsComponent
+    GroupsComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
